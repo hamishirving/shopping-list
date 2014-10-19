@@ -1,0 +1,145 @@
+html {
+	height: 100%;
+}
+
+* {
+	box-sizing: border-box;
+/*	outline: 1px solid red;*/
+}
+
+body {
+	height: 100%;
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, p {
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+}
+
+.bg {
+	background-image: url('../img/bg.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
+.wrap {
+	width: 400px;
+	min-height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	top: 100px;
+	bottom: 100px;
+	left: 0;
+	right: 0;
+	position: absolute;
+	overflow: auto;
+	background: linear-gradient(#8f22c6, #5e4ede);
+}
+
+form	{
+	position: relative;
+}
+
+input {
+	font-size: 1.75em;
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 0.05em;	
+	font-weight: 600;
+	height: 90px;
+	color: #BA8ADB;
+    border-width: 0;
+    border-bottom: 1px solid #6D2DB7;
+	background-color: #9940CA;
+    padding: 0 20px;
+    margin: 0;
+    width: 100%;
+    outline: none;
+    position: relative;
+}
+
+::-webkit-input-placeholder {
+    color: #BA8ADB;
+}
+:-moz-placeholder {
+   color: #BA8ADB;
+   opacity: 1;
+}
+::-moz-placeholder {
+   color: #BA8ADB;
+   opacity: 1;
+}
+:-ms-input-placeholder {
+   color: #BA8ADB;
+}
+
+form:focus, input:focus {
+	color: #fff;
+}
+
+#done {
+	text-decoration: line-through;
+	opacity: 0.4;
+}
+
+.row {
+	color: #fff;
+	font-family: Helvetica, Arial, sans-serif;
+	letter-spacing: 0.05em;	
+	font-weight: 300;
+	height: 90px;
+	width: 100%;
+	padding: 0 65px;
+	border-bottom: 1px solid #B641DC;
+	cursor: pointer;
+	position: relative;
+}
+
+.tick {
+	background-image: url('../img/tick.svg');
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 16px;
+	position: absolute;
+	top: 37px;
+	left: 20px;
+	opacity: 0.4;
+	display: none;
+}
+
+.row h3 {
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	font-size: 1.75em;
+	margin-top: 18px;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+}
+
+.row p {
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	margin-top: 8px;
+	opacity: 0.6;
+	display: block;
+	-webkit-font-smoothing: antialiased;
+}
+
+.delete {
+	background-image: url('../img/delete.svg');
+	background-repeat: no-repeat;
+	opacity: 0.4;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	cursor: pointer;
+	top: 32px;
+	right: 20px;
+	display: none;
+}
+
+
+
