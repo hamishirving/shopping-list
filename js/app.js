@@ -1,52 +1,67 @@
 $(document).ready(function() {
 
+	function currentDate() {
+		var d = new Date();
+		var month = d.getMonth()+1;
+		var day = d.getDate();
+		var output = d.getFullYear() + '/' +
+		    ((''+month).length<2 ? '0' : '') + month + '/' +
+		    ((''+day).length<2 ? '0' : '') + day;
+		// $('.date').append(output);
+	}
+
+	function addItem() {
+		var item = $('input').val();
+        $('div.tick, h3.item, p.date, div.delete').wrapAll('<div class="row"></div>');
+        $('.item').append(item);
+    	$('input').val('');
+	}
+
+	function checkError() {
+		if $('input').val().length == 0 {
+		alert('none');	
+	}
+
 	$('input').keyup(function () {
 		var len = $(this).val().length;
 		if (len > 0) {
-			alert('1 entered'); 		// Should show enter icon
-
-			// $(this).css({
-			// 	'background-image': 'url(../img/enter.svg)',
-   //  			'background-repeat': 'no-repeat',
-   //  			'background-size': '20px 15px',
-   //  			'background-position': '360px 38px'
-			// })
-			
+			$('form').find('.enter').css('display', 'block'); 	// Show enter icon after 1 character enetred
+		} else {
+			$('form').find('.enter').css('display', 'none');  // Hide enter icon if no character entered
 		}
 	})
 
+	$('input').keydown(function (enter) {
+            if (enter.keyCode == 13) {
+            	alert('enter pressed');
+            	// checkError();
+            	// addItem();
+            	// currentDate();
+	 		}
+    });
+
 	$('.row').mouseenter(function() {
-		$('.delete').show();
+		$(this).find('.delete').show('fast'); 	// Show Delete button on mouseenter
 	})
+
 	$('.row').mouseleave(function() {
-		$('.delete').hide();
+		$('.delete').hide("fast"); 				// Hide delete button on mouseleave
 	})
 
-	// $('.row:not(#done)').click(function () { // Click on row with .row but not #done
-	// 	// alert('row clicked');
-	// 	$(this).css('.tick', {display: 'block'});
-	// 	$(this).attr('id', 'done'); // Apply new ID of #done
-	// })
+	$('.row').click(function () {
+		$(this).toggleClass('done');			// Toggle .done class when row clicked
+		$(this).find('.tick').css('display', 'block');
+	});
 
-	// $('#done').click(function () {
-	// 	// alert('complete clicked');
-	// 	$(this).removeAttr('id', 'done'); // Remove #done
-	// })
+	$('.done').click(function () {				// Try to remove tick after row clicked
+		alert('done clicked');
+		// $(this).find('tick');
+	})
 
-	$('.row').click(function() {
-		$('.row').toggle(function() {
-			alert('first click');
-			// $('.row > h3').css({'text-decoration':'line-through',
-			// 			'opacity':'0.4'});
-			// $('.row > p').css({'text-decoration':'line-through',
-			// 			'opacity':'0.4'})
-		}, function() {
-			alert('2nd click');
-			// $('.row > h3').css({'text-decoration':'',
-			// 			'opacity':'1'});
-			// $('.row > p').css({'text-decoration':'',
-			// 			'opacity':'1'})
-		});
-	}
+	$('.delete').click(function () {
+		$('.row').empty();
+	})
 
 })
+
+

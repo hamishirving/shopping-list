@@ -4,7 +4,6 @@ html {
 
 * {
 	box-sizing: border-box;
-/*	outline: 1px solid red;*/
 }
 
 body {
@@ -34,12 +33,48 @@ h1, h2, h3, h4, p {
 	left: 0;
 	right: 0;
 	position: absolute;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	background: linear-gradient(#8f22c6, #5e4ede);
 }
 
 form	{
 	position: relative;
+}
+
+.error {
+	color: #fff;
+	width: 400px;
+	text-align: center;
+	margin: 0 auto;
+	top: 60px;
+	position: relative;
+	display: none;
+}
+
+.error:before {
+	content: "";
+	background-image: url('../img/error.svg');
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -5px;
+	left: 30px;
+}
+
+.enter {
+	background-image: url('../img/enter.svg');
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 20px;
+	height: 15px;
+	right: 20px;
+	top: 40px;
+	opacity: 0.4;
+	z-index: 10;
+	display: none;
 }
 
 input {
@@ -79,8 +114,8 @@ form:focus, input:focus {
 	color: #fff;
 }
 
-#done {
-	text-decoration: line-through;
+.done {
+/*	text-decoration: line-through;*/
 	opacity: 0.4;
 }
 
@@ -95,6 +130,7 @@ form:focus, input:focus {
 	border-bottom: 1px solid #B641DC;
 	cursor: pointer;
 	position: relative;
+	display: none;
 }
 
 .tick {
@@ -114,6 +150,8 @@ form:focus, input:focus {
 	font-weight: 600;
 	font-size: 1.75em;
 	margin-top: 18px;
+	padding-right: 40px;
+	width: 200px;
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 }
@@ -139,6 +177,7 @@ form:focus, input:focus {
 	top: 32px;
 	right: 20px;
 	display: none;
+	z-index: 100;
 }
 
 
