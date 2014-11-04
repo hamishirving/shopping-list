@@ -48,6 +48,7 @@ form	{
 	text-align: center;
 	margin: 0 auto;
 	top: 60px;
+	padding-left: 20px;
 	position: relative;
 	display: none;
 }
@@ -61,7 +62,7 @@ form	{
 	height: 30px;
 	position: absolute;
 	top: -5px;
-	left: 30px;
+	left: 40px;
 }
 
 .enter {
@@ -114,8 +115,7 @@ form:focus, input:focus {
 	color: #fff;
 }
 
-.done {
-/*	text-decoration: line-through;*/
+#done {
 	opacity: 0.4;
 }
 
@@ -174,8 +174,10 @@ form:focus, input:focus {
 	height: 25px;
 	position: absolute;
 	cursor: pointer;
-	top: 32px;
-	right: 20px;
+	top: 50%;
+	margin-top: -12.5px;
+	right: 10%;
+	margin-right: -12.5px;
 	display: none;
 	z-index: 100;
 }
